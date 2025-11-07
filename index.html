@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T-REX AR FINAL</title>
+
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <!-- AR.js for A-Frame -->
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      vr-mode-ui="enabled: false"
+      renderer="logarithmicDepthBuffer: true;"
+    >
+      <!-- Marker with 3D Model -->
+      <a-marker preset="hiro">
+        <a-entity
+          gltf-model="https://cdn.glitch.global/b9764585-6126-4d05-a86d-f0cc04f5ac45/t-rex-stand.glb?v=1602434539828"
+          scale="0.5 0.5 0.5"
+          rotation="-90 0 0"
+          position="0 0 0"
+        ></a-entity>
+      </a-marker>
+
+      <!-- AR Camera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
